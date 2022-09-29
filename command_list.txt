@@ -1,0 +1,9 @@
+minikube start --driver=docker
+
+eval $(minikube docker-env)
+docker build -f Dockerfile -t web-app .
+minikube image load web-app:latest
+kubectl create --filename deployment.yaml
+kubectl expose deployment web-app-deploy --type=NodePort --port=8000
+minikube service web-app-deploy
+
