@@ -1,0 +1,25 @@
+# deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calc-deploy
+  labels:
+    type: restapi
+spec:
+  selector: 
+    matchLabels:
+      app: calc
+  replicas: 1
+  template:
+    metadata:
+      name: calc-tmpl
+      labels:
+        app: calc
+    spec:
+      containers:
+        - name: calc
+          image: calc:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9000

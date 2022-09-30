@@ -1,0 +1,25 @@
+# deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deploy
+  labels:
+    type: restapi
+spec:
+  selector: 
+    matchLabels:
+      app: web-app
+  replicas: 1
+  template:
+    metadata:
+      name: web-app-tmpl
+      labels:
+        app: web-app
+    spec:
+      containers:
+        - name: web-app
+          image: web-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
