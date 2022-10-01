@@ -1,9 +1,6 @@
+from unittest import result
 from flask import Flask, render_template, request
-from test1 import test
-from calcAnalyzer import calc
 import requests
-import json
-import ast
 
 def helper(str):
    return str
@@ -11,30 +8,30 @@ def helper(str):
 app = Flask(__name__,template_folder='../template')
 @app.route('/')
 def main():
+   # main window render
    return render_template('index.html')
-   # return test.getDatos()
    
    
 @app.route("/result", methods = ['POST', 'GET'])
 def setNumbers():
-   output = request.form.to_dict()
-   requests.post("http://127.0.0.1:9000/sum", json=output)
+   # sends data to the analizer 
+   if request.form['submit_data'] == "send data":
+      output = request.form.to_dict()
+      suma_result = requests.post("http://192.168.100.2:9000/sum", json=output)
+      # print(suma_result.text)
+      return render_template('index.html', suma = suma_result.text)
+   else:
+      return render_template('index.html')
 
-   suma = helper(request.get_data().decode('utf-8'))
-   print(suma)
-   # if suma != '':
-   #    suma1 = suma
-   #    print("ta la suma " + suma)
-   # else:
-   #    suma = suma1
-   #    # suma = ast.literal_eval(suma.decode('utf-8'))
-   # suma = suma1
-   return render_template('index.html', suma = request.get_data().decode('utf-8'))
-              
-      #  json_loads = json.loads(suma)
-      #  print(json_loads)
-          
-      
+@app.route("/result1", methods = ['POST', 'GET'])          
+def getResults():
+   if request.form['results_button'] == "Do Something":
+      print("reading data from webapp")
+      results = requests.post("http://192.168.100.2:11000/read", json="send data")
+      return render_template('index.html', results = results.text)
+   else:
+      return render_template('index.html')
+
 
 if __name__ == '__main__':
         app.run(host='0.0.0.0', port=8000)

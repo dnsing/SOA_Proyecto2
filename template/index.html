@@ -12,8 +12,18 @@
         <input type="text" placeholder="numero1" name="numero_1" id="numero_1">
         <input type="text" placeholder="numero2" name="numero_2" id="numero_2">
 
-        <input type="Submit" class = "file_submit">
+        <input type="submit" name="submit_data" value="send data">
     </form>
+        
+    <form class = "grid" action="/result1" method="POST">
+        {% if results %}
+        <h3> {{results}} </h3>
+        {% endif %}
+
+        <input type="submit" name="results_button" value="Do Something">
+    </form>
+
+
 
 </body>
 

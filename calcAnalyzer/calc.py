@@ -16,20 +16,15 @@ def getSuma(numero1, numero2):
 app = Flask(__name__,template_folder='../template')
 @app.route("/sum", methods = ['POST', 'GET'])
 def sum():
-       
        dict_resquest = ast.literal_eval(request.get_data().decode('utf-8'))
        print(dict_resquest)
-       # json_loads = json.loads(json_request)
-       if dict_resquest != {}:
-              suma = getSuma(dict_resquest['numero_1'], dict_resquest["numero_2"])
-              print("suma es : " + str(suma))
-              result = {'suma': str(suma)}
-              
-              requests.post("http://127.0.0.1:8000/result", json=result)
-       return "ok"
-   
-       
+       suma = getSuma(dict_resquest['numero_1'], dict_resquest["numero_2"])
+       print("suma es : " + str(suma))
+       requests.post("http://192.168.100.2:10000/write", json=suma)
 
+       result = str(suma)
+                     
+       return result
        
 if __name__ == '__main__':
         app.run(host='0.0.0.0', port=9000)
