@@ -20,7 +20,7 @@ def sum():
        print(dict_resquest)
        suma = getSuma(dict_resquest['numero_1'], dict_resquest["numero_2"])
        print("suma es : " + str(suma))
-       requests.post("http://192.168.100.2:10000/write", json=suma)
+       requests.post("http://127.0.0.1:10000/write", json=suma)
 
        result = str(suma)
                      

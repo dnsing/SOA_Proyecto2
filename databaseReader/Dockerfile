@@ -9,6 +9,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-EXPOSE 9000
+EXPOSE 11000
 
-CMD ["python", "calc.py"]
+CMD ["python", "databaseReader.py"]

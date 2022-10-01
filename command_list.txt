@@ -1,14 +1,35 @@
 minikube start --driver=docker
-eval $(minikube docker-env)??
+--eval $(minikube docker-env)
 
 docker build -f Dockerfile -t web-app .
 minikube image load web-app:latest
 kubectl create --filename deployment.yaml
 kubectl expose deployment web-app-deploy --type=NodePort --port=8000
-minikube service web-app-deploy
+--minikube service web-app-deploy 
+--kubectl port-forward service/web-app-deploy 8000:8000
+docker run -p 8000:8000 -p 9001:9000 -p 11001:11000 web-app
 
-docker build -f Dockerfile -t alarm-app .
-minikube image load alarm-app:latest
+docker build -f Dockerfile -t calc-app .
+minikube image load calc-app:latest
 kubectl create --filename deployment.yaml
-kubectl expose deployment alarm-app-deploy --type=NodePort --port=9000
-minikube service alarm-app-deploy
+kubectl expose deployment calc-app-deploy --type=NodePort --port=9000
+--minikube service calc-app-deploy
+--kubectl port-forward service/calc-app-deploy 9000:9000
+docker run -p 9000:9000 -p 10001:10000 calc-app
+
+docker build -f Dockerfile -t writer-app .
+minikube image load writer-app:latest
+kubectl create --filename deployment.yaml
+kubectl expose deployment writer-app-deploy --type=NodePort --port=10000
+--minikube service writer-app-deploy
+--kubectl port-forward service/writer-app-deploy 10000:10000
+docker run -p 10000:10000 writer-app
+
+docker build -f Dockerfile -t reader-app .
+minikube image load reader-app:latest
+kubectl create --filename deployment.yaml
+kubectl expose deployment reader-app-deploy --type=NodePort --port=11000
+--minikube service reader-app-deploy
+--kubectl port-forward service/reader-app-deploy 11000:11000
+docker run -p 11000:11000 reader-app
+

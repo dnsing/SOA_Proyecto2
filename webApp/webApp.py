@@ -5,7 +5,7 @@ import requests
 def helper(str):
    return str
 
-app = Flask(__name__,template_folder='../template')
+app = Flask(__name__,template_folder='template')
 @app.route('/')
 def main():
    # main window render
@@ -17,7 +17,7 @@ def setNumbers():
    # sends data to the analizer 
    if request.form['submit_data'] == "send data":
       output = request.form.to_dict()
-      suma_result = requests.post("http://192.168.100.2:9000/sum", json=output)
+      suma_result = requests.post("http://127.0.0.1:9000/sum", json=output)
       # print(suma_result.text)
       return render_template('index.html', suma = suma_result.text)
    else:
@@ -27,11 +27,11 @@ def setNumbers():
 def getResults():
    if request.form['results_button'] == "Do Something":
       print("reading data from webapp")
-      results = requests.post("http://192.168.100.2:11000/read", json="send data")
+      results = requests.post(" http://127.0.0.1:11000/read", json="send data")
       return render_template('index.html', results = results.text)
    else:
       return render_template('index.html')
 
 
 if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=8000)
+        app.run(host='0.0.0.0', port=8000, debug=True)

@@ -1,7 +1,4 @@
 from flask import Flask, render_template, request
-import requests
-import json
-import ast
 
 def writeFile(analysis_result):
        with open('localDatabase.txt', 'a') as f:

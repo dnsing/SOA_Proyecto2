@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request
-import requests
 
 def readFile():
        # cambiar path a generico
-       with open('C:/Users/desingch/OneDrive - Intel Corporation/Documents/TEC/IIS22/SOA/Proyectos/Proyecto 2/SOA_Proyecto2-main/databaseWriter/localDatabase.txt') as f:
+       with open('../databaseWriter/localDatabase.txt') as f:
               content = f.readlines()
 
        for line in content:

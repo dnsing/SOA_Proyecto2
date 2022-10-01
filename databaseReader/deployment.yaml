@@ -3,23 +3,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calc-deploy
+  name: reader-app-deploy
   labels:
     type: restapi
 spec:
   selector: 
     matchLabels:
-      app: calc
+      app: reader-app
   replicas: 1
   template:
     metadata:
-      name: calc-tmpl
+      name: reader-app-tmpl
       labels:
-        app: calc
+        app: reader-app
     spec:
       containers:
-        - name: calc
-          image: calc:latest
+        - name: reader-app
+          image: reader-app:latest
           imagePullPolicy: Never
           ports:
-            - containerPort: 9000
+            - containerPort: 11000
