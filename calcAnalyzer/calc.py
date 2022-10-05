@@ -9,10 +9,6 @@ def getSuma(numero1, numero2):
        else:
               return ''
 
-# more_lines = ['', 'Append text files', 'The End']
-
-# with open('readme.txt', 'a') as f:
-#     f.write('\n'.join(more_lines))
 app = Flask(__name__,template_folder='../template')
 @app.route("/sum", methods = ['POST', 'GET'])
 def sum():
@@ -20,7 +16,7 @@ def sum():
        print(dict_resquest)
        suma = getSuma(dict_resquest['numero_1'], dict_resquest["numero_2"])
        print("suma es : " + str(suma))
-       requests.post("http://127.0.0.1:10000/write", json=suma)
+       requests.post("http://writer-app-deploy:10000/write", json=suma)
 
        result = str(suma)
                      
