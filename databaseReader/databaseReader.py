@@ -1,4 +1,4 @@
-# pylint: disable=bad-indentation, missing-module-docstring,unspecified-encoding, trailing-whitespace, invalid-name  
+# pylint: disable=bad-indentation, missing-module-docstring,unspecified-encoding, trailing-whitespace, invalid-name, unused-import  
 import sys
 import json
 

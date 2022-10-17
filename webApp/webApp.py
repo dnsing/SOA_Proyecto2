@@ -2,8 +2,8 @@
 import sys
 import base64
 import json
-import requests
 from datetime import date
+import requests
 from flask import Flask, render_template, request
 
 
@@ -30,6 +30,11 @@ def main():
    
 @app.route("/result", methods = ['POST', 'GET'])
 def uploadImages():
+   """
+   Method for uploading images.
+   
+   :return: rendered table with response
+   """
    # sends data to the analizer 
    if request.form['submit_data'] == "Analizar":
       imagelist = request.files.getlist("image")  # get file
@@ -49,8 +54,12 @@ def uploadImages():
       return render_template('index.html')
 
 @app.route("/result1", methods = ['POST', 'GET'])          
-def getResults():
-    # gets table
+def updateTable():
+   """
+   Method for updating the table.
+    
+   :return: rendered table with updated table 
+   """
    if request.form['results_button'] == "Desplegar tabla":
       print("reading data from webapp")
       results = requests.post("http://reader-app-deploy:11000/read", json="send data")
