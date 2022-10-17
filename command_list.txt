@@ -9,13 +9,13 @@ minikube service web-app-deploy --url
 --kubectl port-forward service/web-app-deploy 8000:8000
 --docker run -p 8000:8000 -p 9001:9000 -p 11001:11000 web-app
 
-docker build -f Dockerfile -t calc-app .
-minikube image load calc-app:latest
+docker build -f Dockerfile -t img_analyzer-app .
+minikube image load img_analyzer-app:latest
 kubectl create --filename deployment.yaml
-kubectl expose deployment calc-app-deploy --type=NodePort --port=9000
-minikube service calc-app-deploy --url
---kubectl port-forward service/calc-app-deploy 9000:9000
---docker run -p 9000:9000 -p 10001:10000 calc-app
+kubectl expose deployment img_analyzer-app-deploy --type=NodePort --port=9000
+minikube service img_analyzer-app-deploy --url
+--kubectl port-forward service/img_analyzer-app-deploy 9000:9000
+--docker run -p 9000:9000 -p 10001:10000 img_analyzer-app
 
 docker build -f Dockerfile -t writer-app .
 minikube image load writer-app:latest

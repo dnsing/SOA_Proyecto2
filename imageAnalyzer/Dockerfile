@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 9000
 EXPOSE 10000
 
-CMD ["python", "calc.py"]
+CMD ["python", "img_analyzer.py"]

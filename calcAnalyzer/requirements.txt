@@ -1,5 +1,0 @@
-# requirements.txt
-
-requests
-flask
-flask_restful

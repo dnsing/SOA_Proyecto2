@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    Hola
-</head>
+<h1>
+    Workers Emotion Analysis
+</h1>
 
 <body>
-    <form class = "grid" action="/result" method="POST">
-        {% if suma %}
-        <h3> {{suma}} </h3>
+    <form class = "grid" action="/result" method="POST" enctype="multipart/form-data">
+        {% if texto %}
+        <h3> {{texto}} </h3>
         {% endif %}
-        <input type="text" placeholder="numero1" name="numero_1" id="numero_1">
-        <input type="text" placeholder="numero2" name="numero_2" id="numero_2">
-
-        <input type="submit" name="submit_data" value="send data">
+	<input type="file" accept="image/*" multiple="multiple" class="form-control-file"
+             id="formControlFile1" name="image">
+ 
+        <input type="submit" name="submit_data" value="Analizar">
     </form>
+
         
     <form class = "grid" action="/result1" method="POST">
         {% if results %}
         <h3> {{results}} </h3>
         {% endif %}
 
-        <input type="submit" name="results_button" value="Do Something">
+        <input type="submit" name="results_button" value="Desplegar tabla">
     </form>
+
+
+    <table style="width:100%", border="1">
+        {% for date in dates %}
+    		<tr><th colspan="3">{{ date }}</th></tr>
+    		<tr>
+      			<th></th>
+      			{% for row_header in row_headers %}
+        			<th>{{ row_header }}</th>
+      			{% endfor %}
+    		</tr>
+
+    		{% for key, values in mfp_data[date].items() %}
+      			<tr>
+        			<th>{{ key }}</th>
+      			{% for value in values.values() %}
+        			<td>
+        			{{ value }}
+        			</td>
+      			{% endfor %}
+      			</tr>
+    		{% endfor %}
+  	{% endfor %}
+    </table>
+
 
 
 

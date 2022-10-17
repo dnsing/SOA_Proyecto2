@@ -3,3 +3,4 @@
 requests
 flask
 flask_restful
+google.cloud.vision

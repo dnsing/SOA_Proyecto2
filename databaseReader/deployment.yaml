@@ -23,3 +23,12 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 11000
+          volumeMounts: 
+            - mountPath: /db/data
+              name: data-mount
+        
+      volumes: 
+        - name: data-mount
+          hostPath: 
+            path: /db/   
+            type: DirectoryOrCreate

@@ -1,23 +1,34 @@
-from flask import Flask, render_template, request
+# pylint: disable=bad-indentation, missing-module-docstring,unspecified-encoding, trailing-whitespace, invalid-name  
+import sys
+import json
+
+from flask import Flask, request
 
 def readFile():
-       # cambiar path a generico
-       with open('../databaseWriter/localDatabase.txt') as f:
-              content = f.readlines()
+       """
+       Method for reading json from file.
 
-       for line in content:
-              print(line)
-       return content
+       :return: json data 
+       """ 
+       with open('/db/data/localDatabase.txt', 'r+') as file:
+              file_data = json.load(file)
+       return file_data
 
 
-app = Flask(__name__,template_folder='../template')
+app = Flask(__name__)
 @app.route("/read", methods = ['POST', 'GET'])
 def reader():
+       """
+       Method for reading Database.
+
+       :return: database content
+       """ 
        print("Reader init")
        databaseContent = readFile()
-       # readFile(request.get_data().decode('utf-8'))
+       print(databaseContent)
        print("Loaded from localDatabase.txt")
-       return "\n".join(databaseContent)
+       sys.stdout.flush()
+       return databaseContent
        
 if __name__ == '__main__':
         app.run(host='0.0.0.0', port=11000)

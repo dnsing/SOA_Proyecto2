@@ -1,0 +1,125 @@
+{   "2022-10-15": {
+        "hola1.jpg": {
+            "anger": "POSSIBLE",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "LIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola2.png": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "LIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola3.jpg": {
+            "anger": "LIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola4.jpg": {
+            "anger": "LIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola5.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "LIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola6.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "LIKELY"
+        },
+        "hola7.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola8.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "LIKELY"
+        },
+        "hola9.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "hola10.png": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        }
+    },
+    "2022-10-17": {
+        "anger.jpg": {
+            "anger": "POSSIBLE",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "file.png": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "imagen2.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "imagen34.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "images.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "images23.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "imagese.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "imagesew.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "intro.jpg": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "LIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        },
+        "messi.png": {
+            "anger": "VERY_UNLIKELY",
+            "joy": "VERY_UNLIKELY",
+            "sorrow": "VERY_UNLIKELY",
+            "surprise": "VERY_UNLIKELY"
+        }
+    }
+}

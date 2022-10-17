@@ -3,23 +3,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calc-app-deploy
+  name: analyzer-app-deploy
   labels:
     type: restapi
 spec:
   selector: 
     matchLabels:
-      app: calc-app
+      app: analyzer-app
   replicas: 1
   template:
     metadata:
-      name: calc-app-tmpl
+      name: analyzer-app-tmpl
       labels:
-        app: calc-app
+        app: analyzer-app
     spec:
       containers:
-        - name: calc-app
-          image: calc-app:latest
+        - name: analyzer-app
+          image: analyzer-app:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 9000
